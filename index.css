@@ -1,0 +1,41 @@
+#body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#player-body {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+}
+
+#play-stop {
+    width: 100px;
+    height: 100px;
+}
+
+/*模态框*/
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 9999;
+}
+.modal > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 200px;
+    margin:auto;
+    border: 1px solid #666;
+}

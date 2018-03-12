@@ -1,7 +1,12 @@
-class MusicPlayer {
+class MusicPlayer extends CommonService{
     constructor(autoPlay) {
+        super();
+
          // 测试用默认音乐id
-        this.id = 33894312;
+        this.id = '33894312';
+        this.url = {
+            'getMusic': 'http://localhost:3000/music/url?id=' + this.id,
+        };
         this.imageAddress = {
             'play': 'images/play.png',
             'stop': 'images/stop.png',
@@ -27,9 +32,13 @@ class MusicPlayer {
        this.isPlay === true ? this.audioPlayserDoc.play() : this.audioPlayserDoc.pause(); 
     }
 
-    nextMusic(id = this.id) {
-        var musicPromise = getMusic(id),
-        self = this;
+    getMusic(url) {
+        return CommonService.getPromise('GET', url);
+    }
+
+    nextMusic(url = this.url.getMusic) {
+        var musicPromise = this.getMusic(url),
+            self = this;
         musicPromise.then(function(res) {
            
             console.log(res)
@@ -70,24 +79,24 @@ class MusicPlayer {
 }
 
 
-function getMusic(id) {
-    var musicPromise = new Promise(function(resolve, reject){
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:3000/music/url?id=' + id, true);
-        xhr.send();
-        xhr.onreadystatechange = function(res) {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    resolve(JSON.parse(xhr.response));
-                }else {
-                    reject();
-                }
-            }
-        }
-    });
+// function getMusic(method, url) {
+//     var musicPromise = new Promise(function(resolve, reject){
+//         var xhr = new XMLHttpRequest();
+//         xhr.open(method, url, true);
+//         xhr.send();
+//         xhr.onreadystatechange = function(res) {
+//             if (xhr.readyState === 4) {
+//                 if (xhr.status === 200) {
+//                     resolve(JSON.parse(xhr.response));
+//                 }else {
+//                     reject();
+//                 }
+//             }
+//         }
+//     });
 
-    return musicPromise;
-}
+//     return musicPromise;
+// }
 
 var musicPlayer = new MusicPlayer(true);
 musicPlayer.init();

@@ -1,3 +1,6 @@
+body {
+    width: 960px;
+}
 #body {
     position: fixed;
     width: 100%;

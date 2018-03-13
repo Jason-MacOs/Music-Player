@@ -6,6 +6,14 @@ body {
     width: 100%;
     height: 100%;
 }
+/*头部信息*/
+.m-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+/*播放器*/
 #player-body {
     width: 500px;
     height: 300px;

@@ -5,8 +5,11 @@
 
 </head>
 <body>
-    <nav>
+    <nav id="top-bar">
         <div>
+            <div class="m-info">
+                <img>
+            </div>
             <button id="login-btn">登陆</button>
         </div>
     </nav>
@@ -23,10 +26,10 @@
     <div id="login-modal" class="modal">
         <div>
             <form id="login-form">
-                用户名/手机号: <input type="text" id="tel-number"><br>
-                密码: <input type="text" id="password"><br>
-                <button>登陆</button>
-                <button>取消</button>
+                用户名/手机号: <input type="text" name="phone" target="login-form"><br>
+                密码: <input type="password" name="password"><br>
+                <button type="button" name="submit">登陆</button>
+                <button type="button">取消</button>
             </form>
         </div>
     </div>

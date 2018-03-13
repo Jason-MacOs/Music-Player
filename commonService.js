@@ -18,3 +18,19 @@ class CommonService{
         return p;
     }
 }
+
+var HOST = 'http://localhost:3000',
+    URLLIST = {
+        getLogin(formData) {
+            return HOST + '/login/cellphone' + '?phone=' + formData.get('phone') + '&password=' + formData.get('password');
+        },
+    };
+
+var Global = {
+    USERINFO: null
+}
+
+var bodyDoc = document.body;
+bodyDoc.addEventListener('click', () => {
+    Event.trigger('bodyClick');
+});

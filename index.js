@@ -78,25 +78,5 @@ class MusicPlayer extends CommonService{
     }
 }
 
-
-// function getMusic(method, url) {
-//     var musicPromise = new Promise(function(resolve, reject){
-//         var xhr = new XMLHttpRequest();
-//         xhr.open(method, url, true);
-//         xhr.send();
-//         xhr.onreadystatechange = function(res) {
-//             if (xhr.readyState === 4) {
-//                 if (xhr.status === 200) {
-//                     resolve(JSON.parse(xhr.response));
-//                 }else {
-//                     reject();
-//                 }
-//             }
-//         }
-//     });
-
-//     return musicPromise;
-// }
-
 var musicPlayer = new MusicPlayer(true);
 musicPlayer.init();
